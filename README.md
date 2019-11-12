@@ -5,9 +5,20 @@ Simple identicon server based on monsterid from Kevin Gaudin.
 From "Using Docker" by Adrian Mouat.
 
 To launch `identidock` using docker-compose (after completing Chapter 6):
-1) `docker-compose build`
+1) `docker-compose build` for the DEV version of `docker-compose -f prod.yml up` for the PROD version
 2) `docker-compose up`
 3) To stop the container(s): `docker-compose stop
+
+
+To launch `identidock` using the deploy.sh script with DigitalOcean
+1) Export your DigitalOcean `TOKEN` in your bash profile
+2) `docker-machine create --drive digitalocean --digitalocean-access-token $TOKEN identihost-do`
+3) Run `docker-machine ip identihost-do` and replace the IP address in the deploy.sh script
+4) Add an HTTP firewall inbound rule in the DigitalOcean GUI.
+5) `docker-machine scp deploy.sh identihost-do:~/deploy.sh`
+6) `docker-machine ssh identihost-do`
+7) `chmod +x deploy.sh`
+8) `./deploy.sh`
 
 
 To set up Jenkins (after completing Chapter 8):
