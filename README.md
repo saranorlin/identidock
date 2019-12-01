@@ -29,3 +29,12 @@ To set up Jenkins (after completing Chapter 8):
 5) Navigate to http://localhost:8080
 6) Set up a new Jenkins job that pulls Git source code from `https://github.com/saranorlin/identidock` (public repo, no authentication needed). Locally in the `identijenk` folder, open the .sh file starting with `jenkins`. Copy the full text in the .sh script container in the Jenkins job. Run the job.
 7) To backup the latest Jenkins or to use the last backup, see pg 132.
+
+
+Using Kubernetes (chapter 12)
+1) `kubectl create -f redis-controller.json`
+2) `kubectl create -f redis-service.json`
+3) `kubectl create -f dnmonster-controller.json`
+4) `kubectl create -f dnmonster-service.json`
+5) `kubectl create -f identidock-controller.json`
+6) `kubectl create -f identidock-service.json`
